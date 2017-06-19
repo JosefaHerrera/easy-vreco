@@ -40,39 +40,43 @@ function initMap() {
 
     /* AUTOCOMPRETADO INPUT */
     //input1
-    var inputOrigen = (document.getElementById('origen'));
+    var inputOrigen = (document.getElementById("origen"));
     var autocomplete = new google.maps.places.Autocomplete(inputOrigen);
-        autocomplete.bindTo('bounds', map);
+        autocomplete.bindTo("bounds", map);
     //input2
-    var inputDestino = (document.getElementById('destino'));
+    var inputDestino = (document.getElementById("destino"));
     var autocomplete = new google.maps.places.Autocomplete(inputDestino);
-        autocomplete.bindTo('bounds', map);
+        autocomplete.bindTo("bounds", map);
 
 /*DirectionsService:
-Puedes calcular indicaciones (usando varios métodos de transporte) con el objeto DirectionsService. 
+Puedes calcular indicaciones (usando varios métodos de transporte) con el objeto DirectionsService.
 Este objeto se comunica con el servicio de indicaciones de la Google Maps API,
  el cual recibe solicitudes de indicaciones y devuelve resultados computados.
-Puedes administrar estos resultados de indicaciones por ti mismo o usar el objeto DirectionsRenderer para representarlos.*/
+Puedes administrar estos resultados de indicaciones por ti mismo o usar el objeto DirectionsRenderer para representarlos.
+DirectionsRenderer:
+<!-- DEFINICION-->
+
+*/
 
     /*INDICACIONES * Servicio de indicaciones*/
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
 
-    document.getElementById('origen').addEventListener('change', onChangeHandler);
-    document.getElementById('destino').addEventListener('change', onChangeHandler);
+    document.getElementById("origen").addEventListener("change", onChangeHandler);
+    document.getElementById("destino").addEventListener("change", onChangeHandler);
 
 
     function lineaRuta(directionsService, directionsDisplay) {
         directionsService.route({
-            origin: document.getElementById('origen').value,
+            origin: document.getElementById("origen").value,
             destination: document.getElementById('destino').value,
-            travelMode: 'DRIVING'
+            travelMode: "DRIVING"
             },
         function(response, status) {
-            if (status === 'OK') {
+            if (status === "OK") {
                 directionsDisplay.setDirections(response);
             } else {
-                window.alert('Ruta no disponible ' + status);
+                window.alert("Ruta no disponible"+ status);
             }
         });
     }
@@ -81,8 +85,8 @@ Puedes administrar estos resultados de indicaciones por ti mismo o usar el objet
         var onChangeHandler = function(){
             //Servicio de indicaciones
         lineaRuta(directionsService, directionsDisplay);
-    };  
-        
+    }; 
+    
     document.getElementById("ruta").addEventListener("click",onChangeHandler); 
 };
 
@@ -94,10 +98,10 @@ Modos de viaje
 Al calcular indicaciones, debes especificar el modo de transporte que se usará. Actualmente, 
 se admiten los siguientes modos de viaje:
 
-DRIVING (predeterminado) establece indicaciones de manejo estándar por la red de carreteras.
-BICYCLING solicita indicaciones para el traslado en bicicleta por ciclovías y calles preferidas.
-TRANSIT solicita indicaciones por rutas de transporte público.
-WALKING solicita indicaciones de traslado a pie por sendas peatonales y veredas.
+*DRIVING (predeterminado) establece indicaciones de manejo estándar por la red de carreteras.
+*BICYCLING solicita indicaciones para el traslado en bicicleta por ciclovías y calles preferidas.
+*TRANSIT solicita indicaciones por rutas de transporte público.
+*WALKING solicita indicaciones de traslado a pie por sendas peatonales y veredas.
 
 
  */
