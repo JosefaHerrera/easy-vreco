@@ -73,3 +73,13 @@ button:focus {
     margin-bottom: 50px;
     border-radius: 10%;
 }
+
+
+footer {
+    padding: 2%;
+    background-color: rgba(149, 165, 166,.9);
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+}
