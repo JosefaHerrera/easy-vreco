@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--zoom desde mobile-->
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>Josefa Herrera</title>
+	<!--font-awesome-->
+	<script src="https://use.fontawesome.com/1625bb79ec.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+    <section id="coordenadas">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-2 col-xs-12">
+                        <button id="encuentrame" type="button" class="btn btn-default">Encuéntrame</button>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <label for="origen">Origen</label><br>
+                        <input class="form-control" type="" name="" value="" placeholder="Introduce una ubicación">
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <label for="origen">Destino</label><br>
+                        <input class="form-control" type="" name="" value="" placeholder="Introduce una ubicación">
+                    </div>
+                    <div class="col-md-2 col-xs-12">
+                        <button type="button" class="btn btn-default">Ruta</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12" id="map">
+                    <!-- Aquí ira el mapa -->
+                </div>
+            </div>
+        </div>
+	</section>
+
+
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Tu Archivo main.js -->
+	<script type="text/javascript" src="js/main.js"></script>
+	<!--MAPA-->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVd725b3axYI8bCQOaPSQFnMkBmLlJQLg&callback=initMap"
+  type="text/javascript"></script>
+</body>
+</html>
