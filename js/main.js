@@ -1,5 +1,5 @@
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 5,
         center: { lat: -9.1191427, lng: -77.0349046 },
         mapTypeControl: false,
@@ -14,7 +14,7 @@ function initMap() {
         }
     }
 
-    document.getElementById('encuentrame').addEventListener('click', buscar);
+    document.getElementById("encuentrame").addEventListener("click", buscar);
     var latitud, longitud;
 
     var funcionExito = function(posicion) {
@@ -33,7 +33,7 @@ function initMap() {
     }
 
     var funcionError = function(error) {
-        alert('Tenemos un problema con encontrar tu ubicación');
+        alert("Tenemos un problema con encontrar tu ubicación");
     }
                             /*RUTA*/
 
@@ -95,7 +95,7 @@ DirectionsRenderer:
 /*
 Modos de viaje
 
-Al calcular indicaciones, debes especificar el modo de transporte que se usará. Actualmente, 
+Al calcular indicaciones, debes especificar el modo de transporte que se usará. Actualmente,
 se admiten los siguientes modos de viaje:
 
 *DRIVING (predeterminado) establece indicaciones de manejo estándar por la red de carreteras.
