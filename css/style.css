@@ -14,8 +14,14 @@ body{
 .fondo {
     border-radius: 50px;
     padding: 5%;
-    background-color: rgba(149, 165, 166,.6)
+    background-color: rgba(149, 165, 166,.9);
 }
+
+h1{
+    background-color: rgba(241, 196, 15,.6);
+    border-radius: 50px;
+}
+
 
 .btn-default {
     color: #fff;
@@ -43,7 +49,8 @@ button {
 label {
     margin-bottom: 10px;
     margin-top: 10px;
-    color:white;
+    color:rgba(52, 73, 94,1.0);
+    font-weight: bold;
 }
 
 
@@ -64,4 +71,5 @@ button:focus {
     border: 2px solid #7f8c8d;
     margin-top: 50px;
     margin-bottom: 50px;
+    border-radius: 10%;
 }
