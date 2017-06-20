@@ -11,23 +11,23 @@ function initMap() {
         streetViewControl: false
     });
 
-            var icons = {
+    var icons = {
         start: new google.maps.MarkerImage(
-            'http://pix.iemoji.com/phan33/0147.png',
+            'https://es.pinkbike.org/246/sprt/i/icon_cool.gif',
             new google.maps.Size(50, 80),
             // The origin point (x,y)
             new google.maps.Point(0, 0),
             // The anchor point (x,y)
-            new google.maps.Point(22, 32)
+            new google.maps.Point(0, 0)
 
         ),
         end: new google.maps.MarkerImage(
-            'http://pix.iemoji.com/phan33/0147.png',
-            new google.maps.Size(50, 50),
+            'https://es.pinkbike.org/246/sprt/i/icon_cool.gif',
+            new google.maps.Size(50, 150),
             // The origin point (x,y)
             new google.maps.Point(0, 0),
             // The anchor point (x,y)
-            new google.maps.Point(22, 32)
+            new google.maps.Point(0, 0)
         )
     };
 
