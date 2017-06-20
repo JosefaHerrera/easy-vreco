@@ -11,36 +11,25 @@ function initMap() {
         streetViewControl: false
     });
 
+            var icons = {
+        start: new google.maps.MarkerImage(
+            'http://pix.iemoji.com/phan33/0147.png',
+            new google.maps.Size(50, 80),
+            // The origin point (x,y)
+            new google.maps.Point(0, 0),
+            // The anchor point (x,y)
+            new google.maps.Point(22, 32)
 
-        function buscar() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
-        }
-    }
-
-    document.getElementById("encuentrame").addEventListener("click", buscar);
-    var latitud, longitud;
-
-    var funcionExito = function(posicion) {
-        latitud = posicion.coords.latitude;
-        longitud = posicion.coords.longitude;
-
-        var miUbicacion = new google.maps.Marker({
-            position: { lat: latitud, lng: longitud },
-            animation: google.maps.Animation.DROP,
-            map: map,
-            icon: 'http://pix.iemoji.com/phan33/0147.png'
-        });
-
-        map.setZoom(17);
-        map.setCenter({ lat: latitud, lng: longitud });
-    }
-
-    var funcionError = function(error) {
-        alert("Tenemos un problema con encontrar tu ubicación");
-    }
-                            /*RUTA*/
-
+        ),
+        end: new google.maps.MarkerImage(
+            'http://pix.iemoji.com/phan33/0147.png',
+            new google.maps.Size(50, 50),
+            // The origin point (x,y)
+            new google.maps.Point(0, 0),
+            // The anchor point (x,y)
+            new google.maps.Point(22, 32)
+        )
+    };
 
     /* AUTOCOMPRETADO INPUT */
     //input1
@@ -62,12 +51,47 @@ DirectionsRenderer:
 
 */
 
+
+        function buscar() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
+        }
+    }
+
+    document.getElementById("encuentrame").addEventListener("click", buscar);
+    var latitud, longitud;
+
+    var funcionExito = function(posicion) {
+        latitud = posicion.coords.latitude;
+        longitud = posicion.coords.longitude;
+
+        var miUbicacion = new google.maps.Marker({
+            position: { lat: latitud, lng: longitud },
+            animation: google.maps.Animation.DROP,
+            map: map,
+            icon: 'http://www.toysrus.com/graphics/product_images/pTRU1-20626920t50.jpg'
+        });
+
+        map.setZoom(17);
+        map.setCenter({ lat: latitud, lng: longitud });
+    }
+
+    var funcionError = function(error) {
+        alert("Tenemos un problema con encontrar tu ubicación");
+    }
+
+
+                            /*RUTA*/
+
+
     /*INDICACIONES * Servicio de indicaciones*/
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
 
     document.getElementById("origen").addEventListener("change", onChangeHandler);
     document.getElementById("destino").addEventListener("change", onChangeHandler);
+
+
 
 
     function lineaRuta(directionsService, directionsDisplay) {
@@ -79,6 +103,9 @@ DirectionsRenderer:
         function(response, status) {
             if (status === "OK") {
                 directionsDisplay.setDirections(response);
+                var leg = response.routes[0].legs[0];
+                makeMarker(leg.start_location, icons.start, '');
+                makeMarker(leg.end_location, icons.end, '');
             } else {
                 window.alert("Ruta no disponible"+ status);
             }
@@ -91,7 +118,16 @@ DirectionsRenderer:
         lineaRuta(directionsService, directionsDisplay);
     }; 
     
-    document.getElementById("ruta").addEventListener("click",onChangeHandler); 
+    document.getElementById("ruta").addEventListener("click",onChangeHandler);
+
+     function makeMarker(position, icon, title) {
+        new google.maps.Marker({
+            position: position,
+            map: map,
+            icon: icon,
+            title: title
+        });
+    }
 };
 
 
